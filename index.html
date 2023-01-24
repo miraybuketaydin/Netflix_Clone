@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--Navbar-->
+    <div class="nav" id="nav">
+      <img src="images/netflix-logo.png" alt="" class="nav_logo" />
+      <img src="images/netflix-avatar.png" alt="" class="nav_avatar" />
+    </div>
+
     <!--Banner-->
     <div class="banner" id="banner">
       <video
         id="video"
         class="banner"
-        poster="images/large-movie1.jpg"
+        poster="images/bridgerton.jpg"
         style="pointer-events: none"
       >
         <source src="images/bridgerton.mp4" type="video/mp4" />
@@ -130,5 +136,108 @@
         <img src="images/small-movie8.jpg" alt="" class="row_poster" />
       </div>
     </div>
+
+    <!--Romance Movies-->
+    <div class="row">
+      <h2>ROMANCE MOVIES</h2>
+      <div class="row_posters">
+        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
+      </div>
+    </div>
+
+    <!--Horror Movies-->
+    <div class="row">
+      <h2>HORROR MOVIES</h2>
+      <div class="row_posters">
+        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
+      </div>
+    </div>
+
+    <!--Action Movies-->
+    <div class="row">
+      <h2>ACTION MOVIES</h2>
+      <div class="row_posters">
+        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
+      </div>
+    </div>
+
+    <!--Documentaries-->
+    <div class="row">
+      <h2>DOCUMENTARIES</h2>
+      <div class="row_posters">
+        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
+      </div>
+    </div>
+
+    <script>
+      player = document.getElementById("video");
+      btnPlayPause = document.getElementById("btnPlayPause");
+      player.addEventListener(
+        "play",
+        function () {
+          changeButtonType(btnPlayPause, "Pause");
+        },
+        false
+      );
+
+      player.addEventListener(
+        "pause",
+        function () {
+          changeButtonType(btnPlayPause, "Play");
+        },
+        false
+      );
+
+      function playPauseVideo() {
+        if (player.paused || player.ended) {
+          changeButtonType(btnPlayPause, "Pause");
+          player.play();
+        } else {
+          changeButtonType(btnPlayPause, "Play");
+          player.pause();
+        }
+      }
+      function changeButtonType(btn, value) {
+        btn.title = value;
+        btn.innerHTML = value;
+      }
+
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= 100) {
+          nav.classList.add("nav_black");
+        } else {
+          nav.classList.remove("nav_black");
+        }
+      });
+    </script>
   </body>
 </html>
